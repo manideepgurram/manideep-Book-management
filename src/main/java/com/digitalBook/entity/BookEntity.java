@@ -16,8 +16,14 @@ public class BookEntity {
 	private String author;
 	private float price;
 	private String publisher;
-	private String date;
+	private String dateofPublished ;
 	private String category;
+	public String getDateofPublished() {
+		return dateofPublished;
+	}
+	public void setDateofPublished(String dateofPublished) {
+		this.dateofPublished = dateofPublished;
+	}
 	public int getId() {
 		return id;
 	}
@@ -47,12 +53,6 @@ public class BookEntity {
 	}
 	public void setPublisher(String publisher) {
 		this.publisher = publisher;
-	}
-	public String getDate() {
-		return date;
-	}
-	public void setDate(String date) {
-		this.date = date;
 	}
 	public String getCategory() {
 		return category;

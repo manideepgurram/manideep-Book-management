@@ -1,0 +1,38 @@
+<div id="app">
+  <nav
+    class="navbar navbar-expand navbar-dark"
+    style="background-color: rgb(21, 49, 49)"
+  >
+    <h2 class="navbar-brand" style="margin: -12px 0 -15px 10px">
+      Digital Books
+    </h2>
+    <ul class="navbar-nav mr-auto" routerLinkActive="active"></ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="loggedin !== 'true'">
+      <li class="nav-item">
+        <a routerLink="/register" class="nav-link text-light">Register</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/login" class="nav-link text-light">Login</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="loggedin == 'true'">
+      <li class="nav-item">
+        <a href="/profile" class="nav-link" routerLink="profile">{{
+          username
+        }}</a>
+      </li>
+      <li class="nav-item">
+        <a href class="nav-link" (click)="logout()">LogOut</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <img
+      src="https://www.pixelstalk.net/wp-content/uploads/2016/08/Library-HD-Background.jpg"
+      alt=""
+    />
+  </div>
+</div>

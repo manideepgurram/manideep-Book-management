@@ -1,0 +1,40 @@
+<div id="app">
+  <nav
+    class="navbar navbar-expand navbar-dark"
+    style="background-color: rgb(21, 49, 49)"
+  >
+    <h2 class="navbar-brand" style="margin: -12px 0 -15px 10px">
+      Digital Books
+    </h2>
+    <ul class="navbar-nav mr-auto" routerLinkActive="active">
+      <li class="nav-item">
+        <a
+          routerLink="/home"
+          class="nav-link text-light"
+          style="margin-top: 3px; margin-left: 10px"
+          >Home</a
+        >
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="loggedin !== 'true'">
+      <li class="nav-item">
+        <a routerLink="/register" class="nav-link text-light">Register</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/login" class="nav-link text-light">Login</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="loggedin == 'true'">
+      <li class="nav-item">
+        <a href="/profile" class="nav-link" routerLink="profile">{{
+          username
+        }}</a>
+      </li>
+      <li class="nav-item">
+        <button mat-raised-button class="btn btn-transparent text-danger" (click)="confirmDialog()">Logout</button>
+      </li>
+    </ul>
+  </nav>
+</div>

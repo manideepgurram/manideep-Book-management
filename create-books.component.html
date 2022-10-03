@@ -1,0 +1,51 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <app-navbar></app-navbar>
+  <div>
+    <h2>Please enter the fields</h2>
+    <label class="form-label" for="form12">Book Title</label>
+    <input type="text" id="form12" class="form-control" [(ngModel)]="book.title" />
+    <label class="form-label" for="author">Author</label>
+    <input type="text" id="author" class="form-control" [(ngModel)]="book.author" />
+    <label class="form-label" for="category">Category</label>
+    <select [(ngModel)]='book.category' type="text" id="category" class="form-control" name="category"
+      style="width: 76.5%;">
+      <option value="drama">Devotional</option>
+      <option value="comedy">Adventure</option>
+      <option value="tragedy">Love</option>
+      <option value="love">Horror</option>
+      <option value="adventure">Action</option>
+      <option value="horror">Crime</option>
+      <option value="fantasy">Thriller</option>
+      <option value="action">Children's literature</option>
+      <option value="action">Historical Fiction</option>
+      <option value="action">Study</option>
+
+
+    </select>
+    <label class="form-label" for="publisher">Publisher</label>
+    <input type="text" id="publisher" class="form-control" [(ngModel)]="book.publisher" />
+
+    <label class="form-label" for="Price">Price</label>
+    <input type="number" id="Price" class="form-control" [(ngModel)]="book.price" />
+    <label for="dateofPublished" class="form-label">Date of published</label>
+    <input matInput [matDatepicker]="datepicker" [(ngModel)]='book.dateofPublished' type="text" id="dateofPublished"
+      class="form-control" name="dateofPublished">
+    <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+    <mat-datepicker #datepicker></mat-datepicker>
+    <br>
+    <button (click)="save()" class="btn btn-success">Save</button>
+  </div>
+
+
+</body>
+
+</html>
